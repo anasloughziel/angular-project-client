@@ -7,7 +7,7 @@ import { core } from '@angular/compiler';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Compte } from "../compte";
 import { Client } from '../client';
-import { objectVersement } from '../ver';
+import { objectVersement } from '../objectVersement';
 import { __values } from 'tslib';
 
 

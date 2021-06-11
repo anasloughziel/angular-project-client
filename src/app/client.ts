@@ -3,11 +3,11 @@ export interface Client {
 
     id_client: string;
     prenom: string;
-    nom: String;
-    cin: String;
-    mdp: String;
+    nom: string;
+    cin: string;
+    mdp: string;
     email: string;
-    tel: String;
+    tel: string;
     dateCreation: Date;
 
 }

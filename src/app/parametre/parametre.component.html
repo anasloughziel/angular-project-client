@@ -45,40 +45,39 @@
       </blockquote>
     <br>
 
-    <div *ngIf="client">
+    <div >
       <div class="form-row" >
         <div class="form-group col-md-6">
-          <label for="inputPassword4">Nom</label> : {{client.nom}}
-          
+          <label for="inputPassword4">Nom et Prenom</label> : {{nom}}
         </div>
         <br>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Prenom</label> : {{client.prenom}}
-        </div>
+
 
         <div class="form-group">
-          <label for="inputPassword4">CIN</label> : {{client.cin}}
-          
+          <label for="inputPassword4">CIN</label> : {{cin}}
         </div>
+
         <br>
         <div class="form-group">
-          <label for="inputPassword4">Numero de telephone</label> : {{client.tel}}
+          <label for="inputPassword4">Numero de telephone</label> : {{tel}}
         </div>
     </div>
 
-          <form (ngSubmit)="onSubmit()">
+
+
+          <form #loginxform='ngForm' (ngSubmit)="onSubmit(loginxform)">
             <div class="form-row" >
              
               <br>
             </div>
               <div class="form-group">
                 <label for="validationServer01">Email</label>
-                <input type="email" name="email" id="validationServer01" class="form-control" required ngModel   placeholder="Email" >
+                <input type="email" name="email" id="validationServer01" class="form-control" required ngModel placeholder="{{email}}" >
               </div>
               <br>
             <div class="form-group">
               <label for="inputPassword4">Passeword</label>
-              <input type="Passeword" name="mdp" class="form-control" id="inputPassword4" required ngModel   placeholder="Passeword" >
+              <input type="Passeword" name="mdp" class="form-control" id="inputPassword4" required ngModel  >
             </div>
     
           <br>
@@ -91,7 +90,9 @@
                 </label>
               </div>
             </div><br>
-            <button type="submit" class="btn btn-primary">Modifier</button>
+            <div class="row">
+              <input type="submit" [disabled]="!loginxform.valid" value="login" class="btn">
+          </div>
           </form>
 
 

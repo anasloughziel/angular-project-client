@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Compte } from './compte';
 import { Client } from './client';
+import { objectVersement } from './objectVersement';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class CompteService {
     return this.http.get<Compte[]>(`${this.baseUrl}/getClientComptes`);
   }
 
-  public updateEmployee(id: string, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/UpdateComptes/${id}`, value);
+  public updateEmployee(upd: objectVersement): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/UpdateComptes`, upd);
   }
 
   public getClient(id: string): Observable<Client> {

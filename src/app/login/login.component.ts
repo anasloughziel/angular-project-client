@@ -34,10 +34,12 @@ export class LoginComponent implements OnInit {
         this.client = response;
         localStorage.setItem("currentClient",this.client.id_client);
         localStorage.setItem("emailClient",this.client.email);
+        localStorage.setItem("telClient",this.client.tel);
+        localStorage.setItem("cinClient",this.client.cin);
+        localStorage.setItem("mdpClient",this.client.mdp);
         localStorage.setItem("nomClient",this.client.nom + " " + this.client.prenom);
         this.router.navigate(['home']);
         console.log("not found");
-        
       }
       console.log(response)},
       (err : HttpErrorResponse) => {
